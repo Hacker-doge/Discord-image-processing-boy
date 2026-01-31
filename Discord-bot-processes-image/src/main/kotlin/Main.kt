@@ -21,7 +21,7 @@ suspend fun main() {
     val DCtokem = dotenv["DCTOKEM"].toString()
     val kord = Kord(DCtokem)
     kord.on<MessageCreateEvent> {
-        if (message.author?.isBot == true) return@on
+        if (message.author?.isBot == false) return@on
 
         message(message)
     }
